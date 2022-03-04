@@ -25,6 +25,23 @@ for(let [index, value] of entries) {
     console.log(`Key = ${index} | Value = ${value}`)
 }
 
+console.log('\nCustom method like array.entries()\n')
+
+function objEntries(array) {
+    let index = 0;
+    let result = [];
+
+    for(let item of array) {
+        result.push([index, item]);
+        index++;
+    }
+
+    return result;
+}
+
+console.log('default entries method\n', Object.entries(names));
+console.log('custom objEntries\n', objEntries(names));
+
 console.log('\n* * * * * * * * * * * * * * * *\n')
 
 console.log('[Includes]')
@@ -68,3 +85,4 @@ let objSum = [{ x: 1 }, { x: 2 }, { x: 3 }].reduce((acc, curr) => {
 }, 0)
 
 console.log(`objSum total = ${objSum}`)
+
